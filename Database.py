@@ -60,11 +60,11 @@ class RowHistory:
 
 class Database:
 
-    def __init__(self, db_name="history.db") -> None:
+    def __init__(self, db_name="./database/history.db") -> None:
         self.conn = sqlite3.connect(db_name)
         self.cur = self.conn.cursor()
 
-    def initTable(self, path_sql_file="scripts/init.sql"):
+    def initTable(self, path_sql_file="./database/scripts/init.sql"):
         self.cur.executescript(path_sql_file)
         return True
 
