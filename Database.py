@@ -64,7 +64,7 @@ class Database:
         self.conn = sqlite3.connect(db_name)
         self.cur = self.conn.cursor()
 
-    def initTable(self, path_sql_file="init.sql"):
+    def initTable(self, path_sql_file="scripts/init.sql"):
         self.cur.executescript(path_sql_file)
         return True
 
