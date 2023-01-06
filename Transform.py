@@ -133,9 +133,3 @@ url : {self.url}
         row = inst.genRowHistory()
 
         database.addItem(row)
-
-
-if __name__ == "__main__":
-    db = Database()
-
-    InternetScrap.build("https://www.geeksforgeeks.org/extract-title-from-a-webpage-using-python/", db)
