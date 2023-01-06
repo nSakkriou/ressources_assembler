@@ -28,12 +28,23 @@ class Scrapper:
         for title in self.soup.find_all("title"):
             return str(title.text)
 
+    def genFileName(self):
+        return self.getSlug() + ".md" 
+
     def genRowHistory(self):
         pass
 
-    def build(url, database):
-        pass
+    # ----------------- 
+    def write_markdown(self):
 
+        with open("./files/" + self.getSlug() + ".md", "w") as f:
+            f.write(
+                f"""
+                # {self.getTitle()}
+
+                url : {self.url}
+                """
+            )
 
 class TwitterScrap(Scrapper):
 
@@ -48,24 +59,15 @@ class TwitterScrap(Scrapper):
             return row
         else:
             return False
-
-    def write_markdown(self):
-
-        with open(self.getSlug() + ".md", "w") as f:
-            f.write(
-f"""
-# {self.getTitle()}
-
-url : {self.url}
-"""
-            )
-
+    
     def build(url, database: Database):
-        inst = YoutubeScrap(url)
+        inst = TwitterScrap(url)
         inst.write_markdown()
         row = inst.genRowHistory()
 
         database.addItem(row)
+
+
 
 
 class YoutubeScrap(Scrapper):
@@ -81,17 +83,6 @@ class YoutubeScrap(Scrapper):
             return row
         else:
             return False
-
-    def write_markdown(self):
-
-        with open(self.getSlug() + ".md", "w") as f:
-            f.write(
-f"""
-# {self.getTitle()}
-
-url : {self.url}
-"""
-            )
 
     def build(url, database: Database):
         inst = YoutubeScrap(url)
@@ -114,18 +105,6 @@ class InternetScrap(Scrapper):
             return row
         else:
             return False
-
-
-    def write_markdown(self):
-
-        with open(self.getSlug() + ".md", "w") as f:
-            f.write(
-f"""
-# {self.getTitle()}
-
-url : {self.url}
-"""
-            )
 
     def build(url, database: Database):
         inst = InternetScrap(url)
