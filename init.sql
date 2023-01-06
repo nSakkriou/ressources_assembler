@@ -1,0 +1,7 @@
+CREATE TABLE "history" (
+	"id"	INTEGER UNIQUE,
+	"title"	TEXT NOT NULL,
+	"url"	TEXT NOT NULL,
+	"source"	TEXT NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);

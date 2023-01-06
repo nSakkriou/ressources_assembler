@@ -1,0 +1,2 @@
+# Objectifs :
+- Récupérer les données depuis mes bookmarks twitter et mes vidéos likés youtube ou à regarder plus tard afin de les transformer en note markdown pour obsidian et de pouvoir les retravailler
