@@ -3,7 +3,7 @@ import os, glob
 
 class Dropbox:
 
-    ACCESS_TOKEN = "sl.BWZV3kO7lQT9Ntsg2rgfUARBnYG971oGMpIZkHgwiffuugy2SjWT7MhpesBl278CcgAkLkyvgh8K7zUrjx_oc_69ED5l8TjX9x3bQh5yIpBAO_x486NMWANIbWNgHCj1PX5ohv8"
+    ACCESS_TOKEN = "ACCESS_TOKEN"
     TARGET_PATH = "/_RESSOURCES_/_PRISE_DE_NOTE_/01_INBOX/"
 
     def __init__(self) -> None:
